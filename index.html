@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL_50 Example</title>
+</head>
+<body>
+    <div>
+        <h1>Important SQL Commands</h1>
+        <!-- Example 01 -->
+        <h3>01. SELECT</h3>
+        <h4>extracts data from a database</h4>
+        <p>SQL Statement: SELECT CustomerName, City, Country FROM Customers;</p>
+
+        <h3> 02. UPDATE</h3>
+        <h4>updates data in a database</h4>
+        <p>SQL Statement: SELECT CustomerName, City, Country FROM Customers;</p>
+
+        <h3> 03. DELETE</h3>
+        <h4>deletes data from a database</h4>
+
+        <h3> 04. INSERT INTO</h3>
+        <h4>inserts new data into a database</h4>
+
+        <h3> 05. CREATE DATABASE</h3>
+        <h4>creates a new database</h4>
+
+        <h3>07. ALTER DATABASE</h3>
+        <h4>modifies a database</h4>
+
+        <h3>08. CREATE TABLE</h3>
+        <h4>creates a new table</h4>
+
+        <h3>09. ALTER TABLE</h3>
+        <h4>modifies a table</h4>
+
+        <h3>10. DROP TABLE</h3>
+        <h4>deletes a table</h4>
+
+        <h3>11. CREATE INDEX</h3>
+        <h4>creates an index (search key)</h4>
+
+        <h3>12. DROP INDEX</h3>
+        <h4>deletes an index</h4>
+    </div>
+
+    <div>
+        <h1>MySQL Exampale</h1>
+
+        <!-- Example 01 -->
+        <h3>01. SELECT</h3>
+        <h4>The following SQL statement selects the "CustomerName", "City", and "Country" columns from the "Customers" table:</h4>
+        <p>SQL Statement: SELECT CustomerName, City, Country FROM Customers;</p>
+        
+        <!-- Example 02 -->
+        <h3>02. SELECT DISTINCT</h3>
+        <h4>The SELECT DISTINCT statement is used to return only distinct (different) values.
+            Inside a table, a column often contains many duplicate values; and sometimes
+            you only want to list the different (distinct) values.</h4>
+        <p>SQL Statement: SELECT DISTINCT column1, column2, ...
+            FROM table_name;</p>
+
+        <!-- Example 03 -->
+        <h3>03. WHERE</h3>
+        <h4>It is used to extract only those records that fulfill a specified condition.</h4>
+        <p>SQL Statement:
+            SELECT * FROM Customers WHERE Country = 'Mexico';
+        </p>   
+
+        <!-- Example 04 -->
+        <h3>04. AND</h3>
+        <h4>The AND operator displays a record if all the conditions separated by AND are TRUE.</h4>
+        <p>SQL Statement:
+            SELECT column1, column2, ...
+            FROM table_name
+            WHERE condition1 AND condition2 AND condition3 ...;</p>
+
+        <!-- Example 05 -->
+        <h3>05. OR</h3>
+        <h4>The OR operator displays a record if any of the conditions separated by OR is TRUE.</h4>
+        <p>SQL Statement: 
+            SELECT column1, column2, ...
+            FROM table_name
+            WHERE condition1 OR condition2 OR condition3 ...;
+        </p>
+        
+        <!-- Example 06 -->
+        <h3>06. NOT</h3>
+        <h4>The NOT operator displays a record if the condition(s) is NOT TRUE.</h4>
+        <p>SQL Statement: 
+            SELECT column1, column2, ...
+            FROM table_name
+            WHERE NOT condition;
+        </p>
+
+        <!-- Example 07 -->
+        <h3>07. Combining AND, OR and NOT </h3>
+        <h4>The following SQL statement selects all fields from "Customers" where country is "Germany"
+            AND city must be "Berlin" OR "Stuttgart" (use parenthesis to form complex expressions):</h4>
+        <p>SQL Statement: 
+            SELECT * FROM Customers
+            WHERE Co    untry = 'Germany'
+            AND (City = 'Berlin' OR City = 'Stuttgart');
+        </p>
+
+        <!-- Example 08 -->
+        <h3>08. ORDER BY </h3>
+        <h4>The ORDER BY keyword is used to sort the result-set in ascending or descending order.</h4>
+        <p>SQL Statement: 
+            SELECT column1, column2, ...
+            FROM table_name
+            ORDER BY column1, column2, ...;
+        </p>
+
+        <!-- Example 09 -->
+         <h3>09. INSERT INTO</h3>
+         <h4>he INSERT INTO statement is used to insert new records in a table.</h4>
+         <p>SQL Statement:
+            INSERT INTO table_name (column1, column2, column3, ...)
+            VALUES (value1, value2, value3, ...);
+         </p>
+
+
+        <!-- Example 10 -->
+        <h3>10. NULL</h3>
+        <h4>If a field in a table is optional, it is possible to insert a new record or update a record
+            without adding a value to this field. Then, the field will be saved with a NULL value.</h4>
+        <p>SQL Statement:
+            (Is NULL:
+            SELECT column_names
+            FROM table_name
+            WHERE column_name IS NULL;)
+            (Is NOT NULL:
+            SELECT column_names
+            FROM table_name
+            WHERE column_name IS NOT NULL;)
+        </p> 
+
+        <!-- Example 11 -->
+        <h3>11. UPDATE</h3>
+        <h4>The UPDATE statement is used to modify the existing records in a table.</h4>
+        <p>SQL Statement:
+            UPDATE table_name
+            SET column1 = value1, column2 = value2, ...
+            WHERE condition;
+        </p> 
+
+        <!-- Example 12 -->
+        <h3>12. DELETE</h3>
+        <h4>The DELETE statement is used to delete existing records in a table.</h4>
+        <p>SQL Statement:
+            DELETE FROM table_name WHERE condition;
+        </p> 
+
+        
+        <!-- Example 13 -->
+        <h3>13. LIMIT</h3>
+        <h4>The LIMIT clause is useful on large tables with thousands of records.
+            Returning a large number of records can impact performance.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE condition
+            LIMIT number;
+        </p> 
+
+        <!-- Example 14 -->
+        <h3>14. MIN()</h3>
+        <h4>The MIN() function returns the smallest value of the selected column.</h4>
+        <p>SQL Statement:
+            SELECT MIN(column_name)
+            FROM table_name
+            WHERE condition;
+        </p> 
+
+        <!-- Example 15 -->
+        <h3>15. MAX()</h3>
+        <h4>The MAX() function returns the largest value of the selected column.</h4>
+        <p>SQL Statement:
+            SELECT MAX(column_name)
+            FROM table_name
+            WHERE condition;
+        </p> 
+
+        <!-- Example 16 -->
+        <h3>16. COUNT()</h3>
+        <h4>The COUNT() function returns the number of rows that matches a specified criterion.</h4>
+        <p>SQL Statement:
+            SELECT COUNT(column_name)
+            FROM table_name
+            WHERE condition;
+        </p> 
+
+        <!-- Example 17 -->
+        <h3>17. AVG() </h3>
+        <h4>The AVG() function returns the average value of a numeric column. </h4>
+        <p>SQL Statement:
+            SELECT AVG(column_name)
+            FROM table_name
+            WHERE condition;
+        </p>
+
+        <!-- Example 18 -->
+        <h3>18. SUM() </h3>
+        <h4>The SUM() function returns the total sum of a numeric column</h4>
+        <p>SQL Statement:
+            SELECT SUM(column_name)
+            FROM table_name
+            WHERE condition;
+        </p>
+
+        
+        <!-- Example 19 -->
+        <h3>19. LIKE </h3>
+        <h4>The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+            There are two wildcards often used in conjunction with the LIKE operator. (%), (_)
+        </h4>
+        <p>SQL Statement:
+            SELECT * FROM Customers
+            WHERE CustomerName LIKE '%or%';
+        </p>
+
+        
+        <!-- Example 20 -->
+        <h3>20. IN </h3>
+        <h4>The IN operator allows you to specify multiple values in a WHERE clause.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name IN (value1, value2, ...);
+        </p>
+
+        
+        <!-- Example 21 -->
+        <h3>21. BETWEEN </h3>
+        <h4>The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.</h4>
+        <p>SQL Statement:
+            SELECT * FROM Products
+            WHERE Price BETWEEN 10 AND 20;
+        </p>
+
+        
+        <!-- Example 22 -->
+        <h3>22. Aliases </h3>
+        <h4>Aliases are used to give a table, or a column in a table, a temporary name</h4>
+        <p>SQL Statement:
+            SELECT CustomerID AS ID, CustomerName AS Customer
+            FROM Customers;
+        </p>
+
+        <!-- Example 23 -->
+        <h3>23. Joins </h3>
+        <h4>A JOIN clause is used to combine rows from two or more tables, based on a related column between them.</h4>
+        <p>SQL Statement:
+            SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+            FROM Orders
+            INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+        </p>
+
+        <!-- Example 24 -->
+        <h3>24. INNER JOIN </h3>
+        <h4>The INNER JOIN keyword selects records that have matching values in both tables.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table1
+            INNER JOIN table2
+            ON table1.column_name = table2.column_name;
+        </p>
+
+        <!-- Example 25 -->
+        <h3>25. LEFT JOIN </h3>
+        <h4>The LEFT JOIN keyword returns all records from the left table (table1), and the matching records (if any) from the right table (table2).</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table1
+            LEFT JOIN table2
+            ON table1.column_name = table2.column_name;
+        </p>
+
+
+        <!-- Example 26 -->
+        <h3>26. RIGHT JOIN </h3>
+        <h4>The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).</h4>
+        <p>SQL Statement:
+            SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+            FROM Orders
+            RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+            ORDER BY Orders.OrderID;
+        </p>
+
+
+        <!-- Example 27 -->
+        <h3>27. CROSS JOIN </h3>
+        <h4>The CROSS JOIN keyword returns all records from both tables (table1 and table2).</h4>
+        <p>SQL Statement:
+            SELECT Customers.CustomerName, Orders.OrderID
+            FROM Customers
+            CROSS JOIN Orders;
+        </p>
+
+        <!-- Example 28 -->
+        <h3>28.  Self Join </h3>
+        <h4>A self join is a regular join, but the table is joined with itself.</h4>
+        <p>SQL Statement:
+            SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+            FROM Customers A, Customers B
+            WHERE A.CustomerID <> B.CustomerID
+            AND A.City = B.City
+            ORDER BY A.City;
+        </p>
+
+        
+        <!-- Example 29 -->
+        <h3>29. UNION </h3>
+        <h4>The UNION operator is used to combine the result-set of two or more SELECT statements.</h4>
+        <p>SQL Statement:
+            SELECT City FROM Customers
+            UNION
+            SELECT City FROM Suppliers
+            ORDER BY City;
+        </p>
+
+        
+        <!-- Example 30 -->
+        <h3>30. GROUP BY </h3>
+        <h4>The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(),
+            SUM(), AVG()) to group the result-set by one or more columns.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE condition
+            GROUP BY column_name(s)
+            ORDER BY column_name(s);
+        </p>
+
+        <!-- Example 31 -->
+        <h3>31. HAVING </h3>
+        <h4>The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</h4>
+        <p>SQL Statement:
+            SELECT COUNT(CustomerID), Country
+            FROM Customers
+            GROUP BY Country
+            HAVING COUNT(CustomerID) > 5;
+        </p>
+
+        <!-- Example 32 -->
+        <h3>32. EXISTS </h3>
+        <h4>The EXISTS operator is used to test for the existence of any record in a subquery.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE EXISTS
+            (SELECT column_name FROM table_name WHERE condition);
+        </p>
+        
+        <!-- Example 33 -->
+        <h3>33. ANY </h3>
+        <h4>ANY means that the condition will be true if the operation is true for any of the values in the range</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name operator ANY
+            (SELECT column_name
+            FROM table_name
+            WHERE condition);
+        </p>
+        
+        <!-- Example 34 -->
+        <h3>34. ALL</h3>
+        <h4>ALL means that the condition will be true only if the operation is true for all values in the range.</h4>
+        <p>SQL Statement:
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name operator ALL
+            (SELECT column_name
+            FROM table_name
+            WHERE condition);
+        </p>
+
+        <!-- Example 35 -->
+        <h3>35. INSERT INTO SELECT</h3>
+        <h4>The INSERT INTO SELECT statement copies data from one table and inserts it into another table.</h4>
+        <p>SQL Statement:
+            INSERT INTO table2 (column1, column2, column3, ...)
+            SELECT column1, column2, column3, ...
+            FROM table1
+            WHERE condition;
+        </p>
+
+        <!-- Example 35 -->
+        <h3>36. CASE</h3>
+        <h4>The CASE statement goes through conditions and returns a
+            value when the first condition is met (like an if-then-else statement)</h4>
+        <p>SQL Statement:
+            SELECT OrderID, Quantity,
+                CASE
+                    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+                    WHEN Quantity = 30 THEN 'The quantity is 30'
+                    ELSE 'The quantity is under 30'
+                END AS QuantityText
+                FROM OrderDetails;
+        </p>
+
+        <!-- Example 36 -->
+        <h3>36. IFNULL()</h3>
+        <h4>The MySQL IFNULL() function lets you return an alternative value if an expression is NULL.</h4>
+        <p>SQL Statement:
+            SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
+            FROM Products;
+        </p>
+
+        <!-- Example 37 -->
+        <h3>37. COALESCE()</h3>
+        <h4></h4>
+        <p>SQL Statement:
+            SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+            FROM Products;
+        </p>
+
+
+        <!-- Example 37 -->
+        <h3>37. Comments</h3>
+        <h4>Comments are used to explain sections of SQL statements, or to prevent execution of SQL statements.</h4>
+        <p>SQL Statement:
+            -- Select all:
+            SELECT * FROM Customers;
+        </p>
+
+
+        <!-- Example 38 -->
+        <h3>38. Sigle line Comments</h3>
+        <h4>Single line comments start with --</h4>
+        <p>SQL Statement:
+            SELECT * FROM Customers -- WHERE City='Berlin';
+        </p>
+
+
+        <!-- Example 39 -->
+        <h3>38. Multi-line Comments</h3>
+        <h4> Multi-line comments start with /* and end with */.</h4>
+        <p>SQL Statement:
+            /*Select all the columns
+            of all the records
+            in the Customers table:*/
+            SELECT * FROM Customers;
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    
+</body>
+</html>
