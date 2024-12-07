@@ -1,2 +1,2 @@
 # MySQL-_50-Example
-link: 
+link: https://pronoyeugin.github.io/MySQL-_50-Example/
